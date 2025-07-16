@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <div class="header-bg"></div>
+        <div class="container">
+            <h1>Corentin Mazurie</h1>
+            <p class="subtitle">I like games, simulations and software development</p>
+            <div class="social-links">
+                <a href="https://github.com/Corentin-Mzr" class="social-link">GitHub</a>
+                <a href="https://linkedin.com/in/corentin-mazurie" class="social-link">LinkedIn</a>
+                <a href="mailto:corentin.mazurie@laposte.net" class="social-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Some Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card" onclick="window.open('https://github.com/Corentin-Mzr/PonGL', '_blank')">
+                    <div class="project-preview">
+                        <!-- <div class="preview-placeholder">PonGL</div> -->
+                        <video muted width="400">
+                            <source src="assets/pong.webm" type="video/webm">
+                            PonGL Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">PonGL: Pong in C++ and OpenGL</h3>
+                        <p class="project-description">A simple implementation of the game Pong in C++ using OpenGL</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">OpenGL</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card"
+                    onclick="window.open('https://github.com/Corentin-Mzr/Geometry-Wars-SFML', '_blank')">
+                    <div class="project-preview">
+                        <video muted width="720">
+                            <source src="assets/geometry_wars.webm" type="video/webm">
+                            Geometry Wars Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Geometry Wars Clone</h3>
+                        <p class="project-description">A Geometry Wars game based on COMP4300 Course by Dave Churchill
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SFML</span>
+                            <span class="tech-tag">Game</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('https://github.com/Corentin-Mzr/nbody-cpp', '_blank')">
+                    <div class="project-preview">
+                        <video muted width="400">
+                            <source src="assets/nbody.webm" type="video/webm">
+                            N-Body Simulation Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">N-Body Simulation</h3>
+                        <p class="project-description">A customizable n-body simulation in C++ that runs on the CPU</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SFML</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card"
+                    onclick="window.open('https://github.com/Corentin-Mzr/SFML-Kinematics', '_blank')">
+                    <div class="project-preview">
+                        <video muted width="720">
+                            <source src="assets/kinematics.webm" type="video/webm">
+                            Forwards Kinematics Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SFML Forward Kinematics</h3>
+                        <p class="project-description">Forward Kinematics of a customizable robot arm in C++ using SFML
+                            and ImGUI
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SFML</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card"
+                    onclick="window.open('https://github.com/Corentin-Mzr/stable-fluids-python', '_blank')">
+                    <div class="project-preview">
+                        <video muted width="300">
+                            <source src="assets/fluid_simulation_stable.webm" type="video/webm">
+                            Stable-Fluids Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Stable-Fluids Simulation</h3>
+                        <p class="project-description">Fluid Simulation in Python using the Stable-Fluids method</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Navier-Stokes</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('https://github.com/Corentin-Mzr/cpp-particle-fluid-sim', '_blank')">
+                    <div class="project-preview">
+                        <video muted width="400">
+                            <source src="assets/fluid_simulation_particle.webm" type="video/webm">
+                            Particle Based Fluid Simulation Demo Video
+                        </video>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Particle Based Fluid Simulation</h3>
+                        <p class="project-description">Simulation of a fluid made of particles in C++</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SFML</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
