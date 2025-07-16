@@ -77,37 +77,64 @@ function createCursorGlow() {
 // Play video when mouse over card
 function setupVideoHover() {
     const cards = document.querySelectorAll('.project-card');
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    cards.forEach(card => {
-        const video = card.querySelector('video');
-        if (!video) return;
+    if (isMobile) {
+        // Autoplay on mobile
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target.querySelector('video');
+                if (!video) return;
 
-        video.muted = true;
-        let isHovered = false;
+                video.muted = true;
 
-        card.addEventListener('mouseenter', () => {
-            isHovered = true;
-            video.style.opacity = '1';
-            video.play();
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+        }, {
+            threshold: 0.5
         });
 
-        card.addEventListener('mouseleave', () => {
-            isHovered = false;
-            video.style.opacity = '0.5';
-            setTimeout(() => {
-                video.pause();
-                video.currentTime = 0;
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    } else {
+        // Desktop: play on mouseover
+        cards.forEach(card => {
+            const video = card.querySelector('video');
+            if (!video) return;
+
+            video.muted = true;
+            let isHovered = false;
+
+            card.addEventListener('mouseenter', () => {
+                isHovered = true;
                 video.style.opacity = '1';
-            }, 300);
-        });
-
-        video.addEventListener('ended', () => {
-            if (isHovered) {
-                video.currentTime = 0;
                 video.play();
-            }
+            });
+
+            card.addEventListener('mouseleave', () => {
+                isHovered = false;
+                video.style.opacity = '0.5';
+                setTimeout(() => {
+                    video.pause();
+                    video.currentTime = 0;
+                    video.style.opacity = '1';
+                }, 300);
+            });
+
+            video.addEventListener('ended', () => {
+                if (isHovered) {
+                    video.currentTime = 0;
+                    video.play();
+                }
+            });
         });
-    });
+    }
 }
 
 // Init all
